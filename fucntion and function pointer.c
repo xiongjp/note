@@ -2,11 +2,11 @@
 
 
 void fa(int a) {
-	printf("%s: %d\n", "function a", a);
+    printf("%s: %d\n", "function a", a);
 }
 
 void fb(int b) {
-	printf("%s: %d\n", "function b", b);
+    printf("%s: %d\n", "function b", b);
 }
 
 // pointer to function returning void
@@ -20,9 +20,9 @@ void (*signal_2(int a, void (*func) (int))) (int);
 // signal_2 takes two arguments, one is an int, the other
 // is a pointer to function
 void (*signal_2(int a, void (*func) (int))) (int) {
-	func(11111);
- 	return fb;
- }
+    func(11111);
+    return fb;
+}
 
 // error: 'signal_3' declared as function returning a function 
 // void (signal_3(int a, void (*func) (int))) (int);
@@ -44,15 +44,15 @@ void (*(*signal_6)(int a, void (*func) (int))) (int);
 
 
 int main() {
-	signal_1 = fa;
-	signal_1(1);
+    signal_1 = fa;
+    signal_1(1);
 
-	signal_1 = signal_2(1, fa);
-	signal_1(2);
+    signal_1 = signal_2(1, fa);
+    signal_1(2);
 
-	signal_6 = signal_2;
-	signal_1 = signal_6(1, fa);
-	signal_1(2);
+    signal_6 = signal_2;
+    signal_1 = signal_6(1, fa);
+    signal_1(2);
 
-	return 0;
+    return 0;
 }
