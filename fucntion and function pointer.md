@@ -24,13 +24,13 @@ void (*signal_2(int a, void (*func) (int))) (int) {
  	return fb;
  }
 
-// error: ¡®signal_3¡¯ declared as function returning a function 
+// error: 'signal_3' declared as function returning a function 
 // void (signal_3(int a, void (*func) (int))) (int);
 
-// error: ¡®signal_4¡¯ declared as function returning a function
+// error: 'signal_4' declared as function returning a function
 // void (*signal_4)(int a, void (*func) (int)) (int);
 
-// error: ¡®signal_5¡¯ declared as function returning a function
+// error: 'signal_5' declared as function returning a function
 // void ((*signal_5)(int a, void (*func) (int))) (int);
 
 // #########################################################
