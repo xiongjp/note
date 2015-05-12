@@ -8,7 +8,7 @@
 #include <string.h>
 
 
-#define SOCKET_FILE "/home/p_jdjpxiong/non-work/test/unix_domain_socket/test.sock"
+#define SOCKET_FILE "/home/xiongjp/non-work/test/unix_domain_socket/test.sock"
 
 #define ERR_EXIT(err_msg) \
     do { \
