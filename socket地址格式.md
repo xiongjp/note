@@ -5,7 +5,7 @@
 
 sus和posix现在基本是一个东西了，本来嘛，标准只需要一个。以下内容来源于opengroup网站上的相关说明。
 
-<sys/socket.h>头文件里应该定义struct sockaddr, 它至少应该包含如下成员：
+sys/socket.h头文件里应该定义struct sockaddr, 它至少应该包含如下成员：
 
 ```c
 struct sockaddr {
@@ -14,7 +14,7 @@ struct sockaddr {
 };
 ```
 
-<netinet/in.h>头文件里应该定义struct in_addr, struct sockaddr_in, 它们至少应该包含如下成员：
+netinet/in.h头文件里应该定义struct in_addr, struct sockaddr_in, 它们至少应该包含如下成员：
 
 ```c
 struct in_addr {
@@ -28,7 +28,7 @@ struct sockaddr_in {
 };
 ```
 
-<netinet/in.h>头文件里应该定义struct in6_addr, struct sockaddr_in6, 它们至少应该包含如下成员：
+netinet/in.h头文件里应该定义struct in6_addr, struct sockaddr_in6, 它们至少应该包含如下成员：
 
 ```c
 struct in6_addr {
@@ -44,7 +44,7 @@ struct sockaddr_in6 {
 };
 ```
 
-<sys/un.h>头文件里应该定义struct sockaddr_un, 他至少应该包含如下成员：
+sys/un.h头文件里应该定义struct sockaddr_un, 他至少应该包含如下成员：
 
 ```c
 struct sockaddr_un {
@@ -62,12 +62,12 @@ struct sockaddr { // sizeof: 16
 };
 
 struct in_addr {
-    in_addr_t s_addr; /* ipv4 address */
+    in_addr_t s_addr; /* ipv4 address, uint32_t */
 };
 
 struct sockaddr_in { // sizeof: 16
-    sa_family_t    sin_family;  /* address family, 2B */
-    in_port_t      sin_port;    /* port number, 2B */
+    sa_family_t    sin_family;  /* address family, 2B, uint16_t */
+    in_port_t      sin_port;    /* port number, 2B, uint16_t */
     struct in_addr sin_addr;    /* ipv4 address, 4B */
     unsigned char  sin_zero[8]; /* filler, 8B */
 };
